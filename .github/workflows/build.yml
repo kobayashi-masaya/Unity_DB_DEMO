@@ -5,7 +5,7 @@ on: [push, pull_request]
 env:
   APPLICATION_KEY: ${{ secrets.APPLICATION_KEY }}
   CLIENT_KEY: ${{ secrets.CLIENT_KEY }}
-  OUTPUT_PATH: $GITHUB_RUN_ID
+  OUTPUT_PATH: app
   BUNDLE_ID: ""
   PRODUCT_NAME: ""
   COMPANY_NAME: ""
@@ -27,4 +27,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: apk-upload
-        path: ./"$GITHUB_RUN_ID".apk
+        path: ./$OUTPUT_PATH.apk
