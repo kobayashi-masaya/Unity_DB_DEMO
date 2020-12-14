@@ -3,7 +3,7 @@ name: ApplicationBuild
 on: [push, pull_request]
 
 env:
-  OUTPUT_PATH: artifact
+  OUTPUT_PATH: $GITHUB_RUN_ID
   BUNDLE_ID: ""
   PRODUCT_NAME: ""
   COMPANY_NAME: ""
@@ -13,6 +13,10 @@ jobs:
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
+    - name: APPLICATION_KEY Change
+      run: grep -l 'YOUR_APPLICATION_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_APPLICATION_KEY/$APPLICATION_KEY/g"
+    - name: CLIENT_KEY Change
+      run: grep -l 'YOUR_CLIENT_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_CLIENT_KEY/$CLIENT_KEY/g"
     - name: Android Build
       run: |
         /Applications/Unity/Hub/Editor/$UNITY_VERSION/Unity.app/Contents/MacOS/Unity -quit -batchmode -nographics -silent-crashes -logFile \
@@ -21,4 +25,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: apk-upload
-        path: ./artifact.apk
+        path: ./"$GITHUB_RUN_ID".apk
