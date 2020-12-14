@@ -17,3 +17,8 @@ jobs:
       run: |
         /Applications/Unity/Hub/Editor/$UNITY_VERSION/Unity.app/Contents/MacOS/Unity -quit -batchmode -nographics -silent-crashes -logFile \
           -projectPath ./ -executeMethod MobileBuild.BuildAndroid -buildTarget Android
+    - name: apk save
+      uses: actions/upload-artifact@v2
+      with:
+        name: apk-upload
+        path: $OUTPUT_PATH
