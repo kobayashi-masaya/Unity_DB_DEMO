@@ -27,4 +27,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: apk-upload
-        path: ./$OUTPUT_PATH.apk
+        path: ./app.apk
