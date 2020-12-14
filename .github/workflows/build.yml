@@ -3,7 +3,7 @@ name: ApplicationBuild
 on: [push, pull_request]
 
 env:
-  OUTPUT_PATH: ./
+  OUTPUT_PATH: artifact
   BUNDLE_ID: ""
   PRODUCT_NAME: ""
   COMPANY_NAME: ""
@@ -23,4 +23,4 @@ jobs:
         name: apk-upload
         run:
           ls
-        path: ./
+        path: ./artifact.apk
