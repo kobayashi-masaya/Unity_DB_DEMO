@@ -3,6 +3,8 @@ name: ApplicationBuild
 on: [push, pull_request]
 
 env:
+  APPLICATION_KEY: ${{ APPLICATION_KEY }}
+  CLIENT_KEY: ${{ CLIENT_KEY }}
   OUTPUT_PATH: $GITHUB_RUN_ID
   BUNDLE_ID: ""
   PRODUCT_NAME: ""
