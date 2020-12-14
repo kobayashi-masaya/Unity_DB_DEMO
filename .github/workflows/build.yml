@@ -3,7 +3,7 @@ name: ApplicationBuild
 on: [push, pull_request]
 
 env:
-  OUTPUT_PATH: $"./app1214.apk"
+  OUTPUT_PATH: ./app1214.apk
   BUNDLE_ID: ""
   PRODUCT_NAME: ""
   COMPANY_NAME: ""
