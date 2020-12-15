@@ -28,5 +28,5 @@ jobs:
     - name: apk save
       uses: actions/upload-artifact@v2
       with:
-        name: apk-download-data
+        name: apk-download-data.
         path: ./app.apk
