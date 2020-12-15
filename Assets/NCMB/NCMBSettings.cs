@@ -28,9 +28,9 @@ namespace NCMB
 	public class NCMBSettings : MonoBehaviour
 	{
 		//アプリケションキー
-		private static string _applicationKey = 03a6b582f54eed71d427418d3d43a6ca5b446274f699f69e034ad71d5da159b7;
+		private static string _applicationKey = "03a6b582f54eed71d427418d3d43a6ca5b446274f699f69e034ad71d5da159b7";
 		//クライアントキー
-		private static string _clientKey = 5b7ffcaf8995c45ed5134dde48cb59251122f4a90c49b4920795f5bd59b87302;
+		private static string _clientKey = "5b7ffcaf8995c45ed5134dde48cb59251122f4a90c49b4920795f5bd59b87302";
 		//シグネチャチェックフラグ
 		internal static bool _responseValidationFlag = false;
 		//初回のみ実行フラグ
