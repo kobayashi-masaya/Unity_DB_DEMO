@@ -8,7 +8,7 @@ env:
   OUTPUT_PATH: app
   BUNDLE_ID: "com.ncmb.test"
   PRODUCT_NAME: "com.ncmb.test"
-  COMPANY_NAME: ""
+  COMPANY_NAME: "fjct"
   UNITY_VERSION: 2020.1.8f1
 jobs:
   build:
