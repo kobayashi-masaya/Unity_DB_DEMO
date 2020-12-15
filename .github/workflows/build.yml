@@ -18,7 +18,7 @@ jobs:
     - name: APPLICATION_KEY Change
       run: grep -l '_applicationKey = ""' $(find `pwd` -name "NCMBSettings.cs") | xargs sed -i.bak -e "s/_applicationKey = \"\"/_applicationKey = \"$APPLICATION_KEY\"/g"
     - name: CLIENT_KEY Change
-      run: grep -l '_clientKey = ""' $(find `pwd` -name "NCMBSettings.cs") | xargs sed -i.bak -e "s/_applicationKey = \"\"/_clientKey = \"$CLIENT_KEY\"/g"
+      run: grep -l '_clientKey = ""' $(find `pwd` -name "NCMBSettings.cs") | xargs sed -i.bak -e "s/_clientKey = \"\"/_clientKey = \"$CLIENT_KEY\"/g"
     - name: cat MainActivity
       run: cat $(find `pwd` -name "NCMBSettings.cs")
     - name: Android Build
