@@ -6,8 +6,8 @@ env:
   APPLICATION_KEY: ${{ secrets.APPLICATION_KEY }}
   CLIENT_KEY: ${{ secrets.CLIENT_KEY }}
   OUTPUT_PATH: app
-  BUNDLE_ID: ""
-  PRODUCT_NAME: ""
+  BUNDLE_ID: "com.ncmb.test"
+  PRODUCT_NAME: "com.ncmb.test"
   COMPANY_NAME: ""
   UNITY_VERSION: 2020.1.8f1
 jobs:
