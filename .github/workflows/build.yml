@@ -16,9 +16,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: APPLICATION_KEY Change
-      run: grep -l 'YOUR_APPLICATION_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_APPLICATION_KEY/$APPLICATION_KEY/g"
+      run: grep -l '_applicationKey' $(find `pwd` -name "NCMBSettings.cs") | xargs sed -i.bak -e "s/_applicationKey/$APPLICATION_KEY/g"
     - name: CLIENT_KEY Change
-      run: grep -l 'YOUR_CLIENT_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_CLIENT_KEY/$CLIENT_KEY/g"
+      run: grep -l '_clientKey' $(find `pwd` -name "NCMBSettings.cs") | xargs sed -i.bak -e "s/_clientKey/$CLIENT_KEY/g"
+    - name: cat MainActivity
+      run: cat $(find `pwd` -name "NCMBSettings.cs")
     - name: Android Build
       run: |
         /Applications/Unity/Hub/Editor/$UNITY_VERSION/Unity.app/Contents/MacOS/Unity -quit -batchmode -nographics -silent-crashes -logFile \
